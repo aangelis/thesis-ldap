@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: thesis-ldap-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: thesis-ldap
+  template:
+    metadata:
+      labels:
+        component: thesis-ldap
+    spec:
+      containers:
+        - name: thesis-ldap
+          image: 'thesis-ldap:01192051'
+          ports:
+            - containerPort: 3000
+          envFrom:
+            - configMapRef:
+                name: thesis-ldap-configmap

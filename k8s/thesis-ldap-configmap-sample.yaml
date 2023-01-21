@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: thesis-ldap-configmap
+  labels:
+    app: thesis-ldap
+data:
+LDAP_HOST=<your-ldap-host> # e.g. "ldaps://host.domain.tld:636"
+LDAP_DN=<your-ldap-dn>
+LDAP_PASSWORD=<your-ldap-password>
+LDAP_BASE_DN=<your-base-dn> # e.g. "OU=Users,OU=Department,DC=Domain,DC=tld"
