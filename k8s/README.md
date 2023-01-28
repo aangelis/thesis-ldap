@@ -1,4 +1,4 @@
-### Thesis-ldap application (app folder)
+### Thesis-ldap application
 
 ```
 kubectl apply -f thesis-configmap.yaml
