@@ -136,6 +136,7 @@ export default async function handler(req: NextApiRequest, response: NextApiResp
     );
   } else {
     // Handle any other HTTP method
+    response.setHeader("Allow", "POST");
     console.error(`${ip} - [${new Date()}] - LDAP endpoint failure - - Bad HTTP method`);
     response.status(400).json({ message: "Bad HTTP method." });
   }
